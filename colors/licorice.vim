@@ -38,6 +38,12 @@
 " 07 #cbcccb
 " 15 #fefefe
 
+" Old colors
+let old = {
+      \ 'green':  '#a3d749',
+      \ 'orange': '#eeae4f',
+      \ 'white':  '#ffffff',
+\ }
 
 " 🎨 New palette!
 let p = {
@@ -98,7 +104,7 @@ let colors_name = "licorice"
 call licorice#highlight('Normal', p.fg, p.bg)
 call licorice#highlight('NonText', p.gray2)
 call licorice#highlight('Visual', 'none', p.gray4)
-call licorice#highlight('LineNr', p.gray2)
+call licorice#highlight('LineNr', p.gray3)
 call licorice#highlight('CursorLine', 'none', p.black)
 call licorice#highlight('CursorLineNr', p.fg)
 call licorice#highlight('Search', p.yellow, p.gray4)
@@ -129,6 +135,41 @@ hi link TabWinNum TabLine
 hi link TabNum TabLine
 call licorice#highlight('TabLineFill', 'none', p.gray4)
 
+" Diff
+call licorice#highlight('DiffAdd', p.bg, p.green1)
+call licorice#highlight('DiffChange', 'none', p.gray6)
+call licorice#highlight('DiffDelete', p.red, p.red)
+call licorice#highlight('DiffText', 'none', p.gray2)
+
+" Spell
+
+" Syntax
+call licorice#highlight('Comment', p.gray2)
+" call licorice#highlight('Constant', old.green)
+" call licorice#highlight('Number', old.green)
+call licorice#highlight('Constant', p.green2)
+call licorice#highlight('Number', p.green2)
+
+call licorice#highlight('Statement', p.blue)
+call licorice#highlight('Identifier', p.blue)
+call licorice#highlight('Type', p.blue)
+
+" call licorice#highlight('PreProc', old.orange)
+" call licorice#highlight('Function', old.orange)
+" call licorice#highlight('Todo', old.orange)
+call licorice#highlight('PreProc', p.yellow)
+call licorice#highlight('Function', p.yellow)
+call licorice#highlight('Todo', p.yellow)
+
+call licorice#highlight('Keyword', old.white)
+call licorice#highlight('Special', old.white)
+call licorice#highlight('Error', old.white)
+
+
+" hi DiffDelete    guifg=#cccccc guibg=#f47070 gui=none ctermfg=7  ctermbg=9     cterm=none
+" hi DiffAdd       guifg=#1e2426 guibg=#b1ec78 gui=none ctermfg=0  ctermbg=10    cterm=none
+" hi DiffChange                  guibg=#2e3436 gui=none            ctermbg=6     cterm=none
+" hi DiffText                    guibg=#2e3436 gui=none            ctermbg=6     cterm=none
 
 " " Basic
 " hi Normal        guifg=#cccccc guibg=#1e2426          ctermfg=7  ctermbg=none
