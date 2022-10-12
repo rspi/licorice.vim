@@ -39,14 +39,14 @@
 " 15 #fefefe
 
 " Old colors
-let old = {
+let s:old = {
       \ 'green':  '#a3d749',
       \ 'orange': '#eeae4f',
       \ 'white':  '#ffffff',
 \ }
 
 " 🎨 New palette!
-let p = {
+let s:p = {
       \ 'fg':      '#cbcccb',
       \ 'bg':      '#1f2325',
       \ 'yellow':  '#f3c888',
@@ -71,7 +71,7 @@ let p = {
 
 " https://github.com/sainnhe/everforest/blob/b3b42b59b295aa7462843e305639bb134721c9a1/autoload/everforest.vim
 " https://github.com/sainnhe/everforest/blob/master/colors/everforest.vim
-function! licorice#highlight(group, fg, ...)
+function! s:highlight(group, fg, ...)
   execute 'hi' a:group
         \ 'guifg=' . a:fg
         \ 'guibg=' . (a:0 >= 1 ? a:1 : 'none')
@@ -101,84 +101,84 @@ let colors_name = "licorice"
 " Directory - netrw?
 
 " Basics
-call licorice#highlight('Normal', p.fg, p.bg)
-call licorice#highlight('NonText', p.gray2)
-call licorice#highlight('Visual', 'none', p.gray4)
-call licorice#highlight('LineNr', p.gray3)
-call licorice#highlight('CursorLine', 'none', p.black)
-call licorice#highlight('CursorLineNr', p.fg)
-call licorice#highlight('Search', p.yellow, p.gray4)
-call licorice#highlight('MatchParen', p.bg, p.yellow)
-call licorice#highlight('Folded', p.gray4)
-call licorice#highlight('SpecialKey', p.gray2)
+call s:highlight('Normal', s:p.fg, s:p.bg)
+call s:highlight('NonText', s:p.gray2)
+call s:highlight('Visual', 'none', s:p.gray4)
+call s:highlight('LineNr', s:p.gray3)
+call s:highlight('CursorLine', 'none', s:p.black)
+call s:highlight('CursorLineNr', s:p.fg)
+call s:highlight('Search', s:p.yellow, s:p.gray4)
+call s:highlight('MatchParen', s:p.bg, s:p.yellow)
+call s:highlight('Folded', s:p.gray4)
+call s:highlight('SpecialKey', s:p.gray2)
 
 " UI labels
-call licorice#highlight('Title', p.yellow)
-call licorice#highlight('MoreMsg', p.green1)
-call licorice#highlight('ErrorMsg', p.red)
-call licorice#highlight('WarningMsg', p.yellow)
-call licorice#highlight('Question', p.green1)
+call s:highlight('Title', s:p.yellow)
+call s:highlight('MoreMsg', s:p.green1)
+call s:highlight('ErrorMsg', s:p.red)
+call s:highlight('WarningMsg', s:p.yellow)
+call s:highlight('Question', s:p.green1)
 
 " Menus
-call licorice#highlight('Pmenu', p.fg, p.gray6)
-" call licorice#highlight('PmenuSel', p.bg, p.gray1)
-call licorice#highlight('PmenuSel', p.bg, p.green3)
-call licorice#highlight('PmenuSbar', 'none', p.gray4)
-call licorice#highlight('PmenuThumb', p.fg)
+call s:highlight('Pmenu', s:p.fg, s:p.gray6)
+" call s:highlight('PmenuSel', s:p.bg, s:p.gray1)
+call s:highlight('PmenuSel', s:p.bg, s:p.green3)
+call s:highlight('PmenuSbar', 'none', s:p.gray4)
+call s:highlight('PmenuThumb', s:p.fg)
 
 " Windows
-call licorice#highlight('StatusLine', p.fg, p.gray4)
-call licorice#highlight('StatusLineNC', p.fg, p.gray4)
-call licorice#highlight('VertSplit', p.gray4, p.gray4)
+call s:highlight('StatusLine', s:p.fg, s:p.gray4)
+call s:highlight('StatusLineNC', s:p.fg, s:p.gray4)
+call s:highlight('VertSplit', s:p.gray4, s:p.gray4)
 
 " Tabs
-call licorice#highlight('TabLine', p.gray1, p.gray4)
+call s:highlight('TabLine', s:p.gray1, s:p.gray4)
 hi link TabWinNum TabLine
 hi link TabNum TabLine
-call licorice#highlight('TabLineFill', 'none', p.gray4)
+call s:highlight('TabLineFill', 'none', s:p.gray4)
 
 " Diff
-call licorice#highlight('DiffAdd', p.bg, p.green1)
-call licorice#highlight('DiffChange', 'none', p.gray6)
-call licorice#highlight('DiffDelete', p.red, p.red)
-call licorice#highlight('DiffText', 'none', p.gray2)
+call s:highlight('DiffAdd', s:p.bg, s:p.green1)
+call s:highlight('DiffChange', 'none', s:p.gray6)
+call s:highlight('DiffDelete', s:p.red, s:p.red)
+call s:highlight('DiffText', 'none', s:p.gray2)
 
 " Spell
-call licorice#highlight('SpellBad', 'none', 'none', 'underline', p.red)
-call licorice#highlight('SpellCap', 'none', 'none', 'underline', p.red)
-call licorice#highlight('SpellRare', 'none', 'none', 'underline', p.yellow)
+call s:highlight('SpellBad', 'none', 'none', 'underline', s:p.red)
+call s:highlight('SpellCap', 'none', 'none', 'underline', s:p.red)
+call s:highlight('SpellRare', 'none', 'none', 'underline', s:p.yellow)
 
 " Syntax
-call licorice#highlight('Comment', p.gray2)
+call s:highlight('Comment', s:p.gray2)
 
-call licorice#highlight('Constant', old.green)
-call licorice#highlight('Number', old.green)
-" call licorice#highlight('Constant', p.green2)
-" call licorice#highlight('Number', p.green2)
+call s:highlight('Constant', s:old.green)
+call s:highlight('Number', s:old.green)
+" call s:highlight('Constant', s:p.green2)
+" call s:highlight('Number', s:p.green2)
 
-call licorice#highlight('Statement', p.blue)
-call licorice#highlight('Identifier', p.blue)
-call licorice#highlight('Type', p.blue)
+call s:highlight('Statement', s:p.blue)
+call s:highlight('Identifier', s:p.blue)
+call s:highlight('Type', s:p.blue)
 
-call licorice#highlight('PreProc', old.orange)
-call licorice#highlight('Function', old.orange)
-call licorice#highlight('Todo', old.orange)
-" call licorice#highlight('PreProc', p.yellow)
-" call licorice#highlight('Function', p.yellow)
-" call licorice#highlight('Todo', p.yellow)
+call s:highlight('PreProc', s:old.orange)
+call s:highlight('Function', s:old.orange)
+call s:highlight('Todo', s:old.orange)
+" call s:highlight('PreProc', s:p.yellow)
+" call s:highlight('Function', s:p.yellow)
+" call s:highlight('Todo', s:p.yellow)
 
-call licorice#highlight('Keyword', old.white)
-call licorice#highlight('Special', old.white)
-call licorice#highlight('Error', old.white)
-" call licorice#highlight('Keyword', p.fg)
-" call licorice#highlight('Special', p.fg)
-" call licorice#highlight('Error', p.fg)
+" call s:highlight('Keyword', s:old.white)
+" call s:highlight('Special', s:old.white)
+" call s:highlight('Error', s:old.white)
+call s:highlight('Keyword', s:p.fg)
+call s:highlight('Special', s:p.fg)
+call s:highlight('Error', s:p.fg)
 
 
-" hi DiffDelete    guifg=#cccccc guibg=#f47070 gui=none ctermfg=7  ctermbg=9     cterm=none
-" hi DiffAdd       guifg=#1e2426 guibg=#b1ec78 gui=none ctermfg=0  ctermbg=10    cterm=none
-" hi DiffChange                  guibg=#2e3436 gui=none            ctermbg=6     cterm=none
-" hi DiffText                    guibg=#2e3436 gui=none            ctermbg=6     cterm=none
+call s:highlight('htmlTag', s:p.gray1)
+hi link htmlEndTag htmlTag
+call s:highlight('htmlTagName', s:p.fg)
+call s:highlight('Underlined', 'none', 'none', 'underline')
 
 " " Basic
 " hi Normal        guifg=#cccccc guibg=#1e2426          ctermfg=7  ctermbg=none
