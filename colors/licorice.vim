@@ -115,6 +115,8 @@ call licorice#highlight('SpecialKey', p.gray2)
 " UI labels
 call licorice#highlight('Title', p.yellow)
 call licorice#highlight('MoreMsg', p.green1)
+call licorice#highlight('ErrorMsg', p.red)
+call licorice#highlight('WarningMsg', p.yellow)
 call licorice#highlight('Question', p.green1)
 
 " Menus
@@ -142,28 +144,35 @@ call licorice#highlight('DiffDelete', p.red, p.red)
 call licorice#highlight('DiffText', 'none', p.gray2)
 
 " Spell
+call licorice#highlight('SpellBad', 'none', 'none', 'underline', p.red)
+call licorice#highlight('SpellCap', 'none', 'none', 'underline', p.red)
+call licorice#highlight('SpellRare', 'none', 'none', 'underline', p.yellow)
 
 " Syntax
 call licorice#highlight('Comment', p.gray2)
-" call licorice#highlight('Constant', old.green)
-" call licorice#highlight('Number', old.green)
-call licorice#highlight('Constant', p.green2)
-call licorice#highlight('Number', p.green2)
+
+call licorice#highlight('Constant', old.green)
+call licorice#highlight('Number', old.green)
+" call licorice#highlight('Constant', p.green2)
+" call licorice#highlight('Number', p.green2)
 
 call licorice#highlight('Statement', p.blue)
 call licorice#highlight('Identifier', p.blue)
 call licorice#highlight('Type', p.blue)
 
-" call licorice#highlight('PreProc', old.orange)
-" call licorice#highlight('Function', old.orange)
-" call licorice#highlight('Todo', old.orange)
-call licorice#highlight('PreProc', p.yellow)
-call licorice#highlight('Function', p.yellow)
-call licorice#highlight('Todo', p.yellow)
+call licorice#highlight('PreProc', old.orange)
+call licorice#highlight('Function', old.orange)
+call licorice#highlight('Todo', old.orange)
+" call licorice#highlight('PreProc', p.yellow)
+" call licorice#highlight('Function', p.yellow)
+" call licorice#highlight('Todo', p.yellow)
 
 call licorice#highlight('Keyword', old.white)
 call licorice#highlight('Special', old.white)
 call licorice#highlight('Error', old.white)
+" call licorice#highlight('Keyword', p.fg)
+" call licorice#highlight('Special', p.fg)
+" call licorice#highlight('Error', p.fg)
 
 
 " hi DiffDelete    guifg=#cccccc guibg=#f47070 gui=none ctermfg=7  ctermbg=9     cterm=none
