@@ -93,23 +93,19 @@ let colors_name = "licorice"
 " ICursor ??
 " ColorColumn (set cursorcolumn=+1, set textwidth=60)
 " WildMenu not used? (if found link to Pmenu?)
-" SignColumn, same as background?
 " IncSearch ??
 " TabLineSel - just fg
 " TabWinNumSel - just fg
 " TabNumSel - just fg
-" Directory - netrw?
 "
 " hi Cursor                      guibg=#cccccc                     ctermbg=7
 " hi ICursor                     guibg=#cccccc                     ctermbg=7
 " hi ColorColumn                 guibg=#191f21                     ctermbg=0
 " hi WildMenu      guifg=#cccccc guibg=#191f21          ctermfg=7  ctermbg=0
-" hi SignColumn                  guibg=#1e2426                     ctermbg=none
 " hi IncSearch     guifg=#fcaf3e guibg=#444444          ctermfg=3  ctermbg=8
 " hi TabLineSel    guifg=#cccccc guibg=#1e2426 gui=none ctermfg=7  ctermbg=none  cterm=none
 " hi TabWinNumSel  guifg=#cccccc guibg=#1e2426 gui=none ctermfg=7  ctermbg=none  cterm=none
 " hi TabNumSel     guifg=#cccccc guibg=#1e2426 gui=none ctermfg=7  ctermbg=none  cterm=none
-" hi Directory     guifg=#ffffff                        ctermfg=15
 
 " Basics
 call s:highlight('Normal', s:p.fg, s:p.bg)
@@ -122,6 +118,8 @@ call s:highlight('Search', s:p.yellow, s:p.gray4)
 call s:highlight('MatchParen', s:p.bg, s:p.yellow)
 call s:highlight('Folded', s:p.gray4)
 call s:highlight('SpecialKey', s:p.gray2)
+call s:highlight('Directory', s:p.blue)
+call s:highlight('SignColumn', 'none', s:p.bg)
 
 " UI labels
 call s:highlight('Title', s:p.yellow)
@@ -132,10 +130,9 @@ call s:highlight('Question', s:p.green1)
 
 " Menus
 call s:highlight('Pmenu', s:p.fg, s:p.gray6)
-" call s:highlight('PmenuSel', s:p.bg, s:p.gray1)
-call s:highlight('PmenuSel', s:p.bg, s:p.green3)
+call s:highlight('PmenuSel', 'none', s:p.gray3)
 call s:highlight('PmenuSbar', 'none', s:p.gray4)
-call s:highlight('PmenuThumb', s:p.fg)
+call s:highlight('PmenuThumb', 'none', s:p.fg)
 
 " Windows
 call s:highlight('StatusLine', s:p.fg, s:p.gray4)
@@ -192,3 +189,10 @@ call s:highlight('htmlTagName', s:p.fg)
 call s:highlight('Underlined', 'none', 'none', 'underline')
 hi link cssBraces htmlTag
 
+call s:highlight('NvimTreeVertSplit', s:p.bg, s:p.bg)
+call s:highlight('NvimTreeNormal', s:p.fg, s:p.black)
+call s:highlight('NvimTreeEndOfBuffer', s:p.black, s:p.black)
+call s:highlight('NvimTreeCursorLine', 'none', s:p.bg)
+call s:highlight('NvimTreeExecFile', s:p.green1, 'none')
+hi link NvimTreeRootFolder Directory
+hi link NvimTreeSpecialFile NvimTreeNormal
