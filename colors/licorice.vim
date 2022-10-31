@@ -93,7 +93,7 @@ let colors_name = "licorice"
 " ICursor ??
 " ColorColumn (set cursorcolumn=+1, set textwidth=60)
 " WildMenu not used? (if found link to Pmenu?)
-" IncSearch ??
+" IncSearch - looks pretty good without it
 " TabLineSel - just fg
 " TabWinNumSel - just fg
 " TabNumSel - just fg
@@ -115,7 +115,8 @@ call s:highlight('LineNr', s:p.gray3)
 call s:highlight('CursorLine', 'none', s:p.black)
 call s:highlight('CursorLineNr', s:p.fg)
 call s:highlight('Search', s:p.yellow, s:p.gray4)
-call s:highlight('MatchParen', s:p.bg, s:p.yellow)
+" call s:highlight('IncSearch', s:p.bg, s:old.orange)
+call s:highlight('MatchParen', s:p.bg, s:p.gray3)
 call s:highlight('Folded', s:p.gray4)
 call s:highlight('SpecialKey', s:p.gray2)
 call s:highlight('Directory', s:p.blue)
@@ -141,8 +142,8 @@ call s:highlight('VertSplit', s:p.gray4, s:p.gray4)
 
 " Tabs
 call s:highlight('TabLine', s:p.gray1, s:p.gray4)
-hi link TabWinNum TabLine
-hi link TabNum TabLine
+hi! link TabWinNum TabLine
+hi! link TabNum TabLine
 call s:highlight('TabLineFill', 'none', s:p.gray4)
 
 " Diff
@@ -184,15 +185,15 @@ call s:highlight('Error', s:p.fg)
 
 
 call s:highlight('htmlTag', s:p.gray1)
-hi link htmlEndTag htmlTag
+hi! link htmlEndTag htmlTag
 call s:highlight('htmlTagName', s:p.fg)
 call s:highlight('Underlined', 'none', 'none', 'underline')
-hi link cssBraces htmlTag
+hi! link cssBraces htmlTag
 
 call s:highlight('NvimTreeVertSplit', s:p.bg, s:p.bg)
 call s:highlight('NvimTreeNormal', s:p.fg, s:p.black)
 call s:highlight('NvimTreeEndOfBuffer', s:p.black, s:p.black)
 call s:highlight('NvimTreeCursorLine', 'none', s:p.bg)
 call s:highlight('NvimTreeExecFile', s:p.green1, 'none')
-hi link NvimTreeRootFolder Directory
-hi link NvimTreeSpecialFile NvimTreeNormal
+hi! link NvimTreeRootFolder Directory
+hi! link NvimTreeSpecialFile NvimTreeNormal
