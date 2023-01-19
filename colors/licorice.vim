@@ -109,7 +109,7 @@ let colors_name = "licorice"
 
 " Basics
 call s:highlight('Normal', s:p.fg, s:p.bg)
-call s:highlight('NonText', s:p.gray2)
+call s:highlight('NonText', s:p.gray3)
 call s:highlight('Visual', 'none', s:p.gray4)
 call s:highlight('LineNr', s:p.gray3)
 call s:highlight('CursorLine', 'none', s:p.black)
@@ -190,10 +190,20 @@ call s:highlight('htmlTagName', s:p.fg)
 call s:highlight('Underlined', 'none', 'none', 'underline')
 hi! link cssBraces htmlTag
 
-call s:highlight('NvimTreeVertSplit', s:p.bg, s:p.bg)
 call s:highlight('NvimTreeNormal', s:p.fg, s:p.black)
 call s:highlight('NvimTreeEndOfBuffer', s:p.black, s:p.black)
 call s:highlight('NvimTreeCursorLine', 'none', s:p.bg)
 call s:highlight('NvimTreeExecFile', s:p.green1, 'none')
 hi! link NvimTreeRootFolder Directory
 hi! link NvimTreeSpecialFile NvimTreeNormal
+hi! link NvimTreeWinSeparator NvimTreeEndOfBuffer
+
+call s:highlight('TelescopeBorder', s:p.gray6, s:p.gray6)
+call s:highlight('TelescopePromptNormal', s:p.fg, s:p.gray3)
+call s:highlight('TelescopePromptBorder', s:p.gray3, s:p.gray3)
+call s:highlight('TelescopePromptTitle', s:p.gray6, s:p.red)
+call s:highlight('TelescopePreviewTitle', s:p.gray6, s:p.green1)
+call s:highlight('TelescopeMatching', s:p.yellow, 'none')
+call s:highlight('TelescopePromptCounter', s:p.gray1, 'none')
+hi! link TelescopeNormal Pmenu
+hi! link TelescopeSelection PmenuSel
