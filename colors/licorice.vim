@@ -207,3 +207,9 @@ call s:highlight('TelescopeMatching', s:p.yellow, 'none')
 call s:highlight('TelescopePromptCounter', s:p.gray1, 'none')
 hi! link TelescopeNormal Pmenu
 hi! link TelescopeSelection PmenuSel
+
+
+call s:highlight('DiagnosticError', s:p.red, 'none')
+call s:highlight('DiagnosticWarn', s:p.yellow, 'none')
+call s:highlight('DiagnosticInfo', s:p.blue, 'none')
+hi! link DiagnosticHint DiagnosticWarn
