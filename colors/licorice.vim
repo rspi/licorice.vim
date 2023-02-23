@@ -190,6 +190,11 @@ call s:highlight('htmlTagName', s:p.fg)
 call s:highlight('Underlined', 'none', 'none', 'underline')
 hi! link cssBraces htmlTag
 
+call s:highlight('DiagnosticError', s:p.red, 'none')
+call s:highlight('DiagnosticWarn', s:p.yellow, 'none')
+call s:highlight('DiagnosticInfo', s:p.blue, 'none')
+hi! link DiagnosticHint DiagnosticWarn
+
 call s:highlight('NvimTreeNormal', s:p.fg, s:p.black)
 call s:highlight('NvimTreeEndOfBuffer', s:p.black, s:p.black)
 call s:highlight('NvimTreeCursorLine', 'none', s:p.bg)
@@ -209,7 +214,10 @@ hi! link TelescopeNormal Pmenu
 hi! link TelescopeSelection PmenuSel
 
 
-call s:highlight('DiagnosticError', s:p.red, 'none')
-call s:highlight('DiagnosticWarn', s:p.yellow, 'none')
-call s:highlight('DiagnosticInfo', s:p.blue, 'none')
-hi! link DiagnosticHint DiagnosticWarn
+hi! link LazyProp Pmenu
+hi! link LazyButton TelescopePromptNormal
+
+hi! link MasonMutedBlock TelescopePromptNormal
+
+
+
