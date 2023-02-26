@@ -38,24 +38,20 @@
 " 07 #cbcccb
 " 15 #fefefe
 
-" Old colors
-let s:old = {
-      \ 'green':  '#a3d749',
-      \ 'orange': '#eeae4f',
-      \ 'white':  '#ffffff',
-\ }
 
-" 🎨 New palette!
+" 🎨 Palette!
 let s:p = {
       \ 'fg':      '#cbcccb',
       \ 'bg':      '#1f2325',
       \ 'yellow':  '#f3c888',
       \ 'cyan':    '#7fbbb3',
       \ 'green1':  '#c0e380',
-      \ 'green2':  '#83c092',
-      \ 'green3':  '#a7c07f',
+      \ 'green2':  '#a3d749',
+      \ 'green3':  '#83c092',
+      \ 'green4':  '#a7c07f',
       \ 'blue':    '#7da1cc',
       \ 'magenta': '#d699b6',
+      \ 'orange':  '#eeae4f',
       \ 'red':     '#e67e80',
       \ 'gray1':   '#888985',
       \ 'gray2':   '#656663',
@@ -64,6 +60,7 @@ let s:p = {
       \ 'gray5':   '#2e4a55',
       \ 'gray6':   '#2e3436',
       \ 'black':   '#1a1e20',
+      \ 'white':   '#ffffff',
 \ }
 
 
@@ -115,7 +112,7 @@ call s:highlight('LineNr', s:p.gray3)
 call s:highlight('CursorLine', 'none', s:p.black)
 call s:highlight('CursorLineNr', s:p.fg)
 call s:highlight('Search', s:p.yellow, s:p.gray4)
-" call s:highlight('IncSearch', s:p.bg, s:old.orange)
+" call s:highlight('IncSearch', s:p.bg, s:p.orange)
 call s:highlight('MatchParen', s:p.bg, s:p.gray3)
 call s:highlight('Folded', s:p.gray4)
 call s:highlight('SpecialKey', s:p.gray2)
@@ -160,29 +157,20 @@ call s:highlight('SpellRare', 'none', 'none', 'underline', s:p.yellow)
 " Syntax
 call s:highlight('Comment', s:p.gray2)
 
-call s:highlight('Constant', s:old.green)
-call s:highlight('Number', s:old.green)
-" call s:highlight('Constant', s:p.green2)
-" call s:highlight('Number', s:p.green2)
+call s:highlight('Constant', s:p.green2)
+call s:highlight('Number', s:p.green2)
 
 call s:highlight('Statement', s:p.blue)
 call s:highlight('Identifier', s:p.blue)
 call s:highlight('Type', s:p.blue)
 
-call s:highlight('PreProc', s:old.orange)
-call s:highlight('Function', s:old.orange)
-call s:highlight('Todo', s:old.orange)
-" call s:highlight('PreProc', s:p.yellow)
-" call s:highlight('Function', s:p.yellow)
-" call s:highlight('Todo', s:p.yellow)
+call s:highlight('PreProc', s:p.orange)
+call s:highlight('Function', s:p.orange)
+call s:highlight('Todo', s:p.orange)
 
-" call s:highlight('Keyword', s:old.white)
-" call s:highlight('Special', s:old.white)
-" call s:highlight('Error', s:old.white)
 call s:highlight('Keyword', s:p.fg)
 call s:highlight('Special', s:p.fg)
 call s:highlight('Error', s:p.fg)
-
 
 call s:highlight('htmlTag', s:p.gray1)
 hi! link htmlEndTag htmlTag
@@ -195,6 +183,7 @@ call s:highlight('DiagnosticWarn', s:p.yellow, 'none')
 call s:highlight('DiagnosticInfo', s:p.blue, 'none')
 hi! link DiagnosticHint DiagnosticWarn
 
+" Plugins
 call s:highlight('NvimTreeNormal', s:p.fg, s:p.black)
 call s:highlight('NvimTreeEndOfBuffer', s:p.black, s:p.black)
 call s:highlight('NvimTreeCursorLine', 'none', s:p.bg)
@@ -212,7 +201,6 @@ call s:highlight('TelescopeMatching', s:p.yellow, 'none')
 call s:highlight('TelescopePromptCounter', s:p.gray1, 'none')
 hi! link TelescopeNormal Pmenu
 hi! link TelescopeSelection PmenuSel
-
 
 hi! link LazyProp Pmenu
 hi! link LazyButton TelescopePromptNormal
