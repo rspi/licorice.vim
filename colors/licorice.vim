@@ -112,7 +112,7 @@ call s:highlight('LineNr', s:p.gray3)
 call s:highlight('CursorLine', 'none', s:p.black)
 call s:highlight('CursorLineNr', s:p.fg)
 call s:highlight('Search', s:p.yellow, s:p.gray4)
-" call s:highlight('IncSearch', s:p.bg, s:p.orange)
+call s:highlight('CurSearch', s:p.yellow, s:p.gray4)
 call s:highlight('MatchParen', s:p.bg, s:p.gray3)
 call s:highlight('Folded', s:p.gray4)
 call s:highlight('SpecialKey', s:p.gray2)
@@ -121,12 +121,13 @@ call s:highlight('SignColumn', 'none', s:p.bg)
 
 " UI labels
 call s:highlight('Title', s:p.yellow)
-call s:highlight('MoreMsg', s:p.green1)
+call s:highlight('MoreMsg', s:p.green2)
 call s:highlight('ErrorMsg', s:p.red)
 call s:highlight('WarningMsg', s:p.yellow)
-call s:highlight('Question', s:p.green1)
+call s:highlight('Question', s:p.green2)
 
 " Menus
+call s:highlight('NormalFloat', s:p.fg, s:p.gray6)
 call s:highlight('Pmenu', s:p.fg, s:p.gray6)
 call s:highlight('PmenuSel', 'none', s:p.gray3)
 call s:highlight('PmenuSbar', 'none', s:p.gray4)
@@ -157,6 +158,7 @@ call s:highlight('SpellRare', 'none', 'none', 'underline', s:p.yellow)
 " Syntax
 call s:highlight('Comment', s:p.gray2)
 
+call s:highlight('String', s:p.green2)
 call s:highlight('Constant', s:p.green2)
 call s:highlight('Number', s:p.green2)
 
@@ -207,5 +209,16 @@ hi! link LazyButton TelescopePromptNormal
 
 hi! link MasonMutedBlock TelescopePromptNormal
 
+" Treesitter
+" :Inspect to see what is under the cursor
+call s:highlight('@function.call', s:p.fg)
+call s:highlight('@property', s:p.fg)
+call s:highlight('@constructor', s:p.blue)
+call s:highlight('@keyword', s:p.blue)
 
-
+call s:highlight('@function.call.python', s:p.orange)
+" call s:highlight('@keyword.python', s:p.blue) " pass
+" call s:highlight('@keyword.function.python', s:p.blue) " def
+" call s:highlight('@keyword.conditional.python', s:p.blue) " if else
+" call s:highlight('@keyword.return.python', s:p.blue) " return
+call s:highlight('@constant.builtin.python', s:p.green2) " None
